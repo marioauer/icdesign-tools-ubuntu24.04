@@ -1,0 +1,6 @@
+{
+  "ngspice": true,
+  "openvaf": true,
+  "vacask": true,
+  "xschem": true
+}
