@@ -16,7 +16,7 @@ Use an Ubuntu 24.04 machine or VM with internet access, permission to use `sudo`
 ```sh
 sudo apt-get update
 sudo apt-get install -y git
-git clone https://github.com/Mario-Auer-TUG/icdesign-tools-ubuntu24.04.git
+git clone https://github.com/marioauer/icdesign-tools-ubuntu24.04.git
 cd icdesign-tools-ubuntu24.04
 ```
 

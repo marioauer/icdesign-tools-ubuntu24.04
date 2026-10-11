@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/config.sh"
 
 # Override for forks: https://<owner>.github.io/<repository>
-BASE_URL="${ICDESIGN_PACKAGES_URL:-https://Mario-Auer-TUG.github.io/icdesign-tools-ubuntu24.04}"
+BASE_URL="${ICDESIGN_PACKAGES_URL:-https://marioauer.github.io/icdesign-tools-ubuntu24.04}"
 LOCAL_DIR=""
 if [[ ${1:-} == --local && $# == 2 ]]; then
   LOCAL_DIR="$2"
