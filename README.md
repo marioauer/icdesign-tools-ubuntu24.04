@@ -132,3 +132,5 @@ make test                                      # run repository tests
 ```
 
 Package source pins and dependencies are in `packages/<name>/dependencies.json`. You do not need to change them for normal course use.
+
+VACASK uses the same upstream `main` commit as the Ubuntu 26.04 build: `da17a594f9a67bd660bc68664be1a4bdb480a353` (2026-10-15), newer than the 0.3.4 release. Its Debian version includes the source commit date and hash so it upgrades the previous release package. FFTW3 is required for periodic steady-state analysis; shared-library runtime dependencies are computed automatically. The OpenVAF and Boost pins are unchanged, and optional Cadnip parsers remain disabled.

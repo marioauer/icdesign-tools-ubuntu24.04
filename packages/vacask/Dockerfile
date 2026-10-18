@@ -57,7 +57,7 @@ RUN cmake -S . -B /build/vacask-build -G Ninja \
 RUN set -eu; \
     rm -f "/pkgroot${PREFIX}/bin/openvaf-r"; \
     install -Dm0644 LICENSE /pkgroot/usr/share/doc/icdesign-vacask/copyright; \
-    version="${VACASK_VERSION}-2"; \
+    version="${VACASK_VERSION}+git$(git show -s --format=%cd --date=format:%Y%m%d HEAD).$(git rev-parse --short=8 HEAD)-1"; \
     dpkg --validate-version "${version}"; \
     arch="$(dpkg --print-architecture)"; \
     mkdir -p /pkgroot/DEBIAN /out; \

@@ -2,8 +2,8 @@
   "sources": {
     "vacask": {
       "url": "https://codeberg.org/arpadbuermen/VACASK",
-      "ref": "_0.3.4",
-      "commit": "c1a1c84f1b2b9aa71c0cddf06e555441434db7b7"
+      "ref": "main",
+      "commit": "da17a594f9a67bd660bc68664be1a4bdb480a353"
     },
     "openvaf": {
       "url": "https://github.com/OpenVAF/OpenVAF-Reloaded.git",
@@ -25,6 +25,7 @@
     "libtomlplusplus-dev",
     "libsuitesparse-dev",
     "libopenblas-dev",
+    "libfftw3-dev",
     "python3",
     "llvm-18",
     "llvm-18-dev",

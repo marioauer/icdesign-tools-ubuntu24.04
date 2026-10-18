@@ -65,6 +65,17 @@ class BuildTests(unittest.TestCase):
         result = subprocess.check_output([sys.executable, ROOT / "scripts/build.py", "--list"], text=True)
         self.assertEqual(result.splitlines(), list(build.PACKAGES))
 
+    def test_vacask_snapshot(self):
+        sources = build.load(ROOT / "packages/vacask/dependencies.json")["sources"]
+        self.assertEqual(sources["vacask"]["ref"], "main")
+        self.assertEqual(sources["vacask"]["commit"],
+                         "da17a594f9a67bd660bc68664be1a4bdb480a353")
+        self.assertIn("libfftw3-dev", build.build_dependencies(("vacask",)))
+        dockerfile = (ROOT / "packages/vacask/Dockerfile").read_text()
+        self.assertIn("${VACASK_VERSION}+git", dockerfile)
+        self.assertIn("dpkg-shlibdeps", dockerfile)
+        self.assertIn("-DCADNIP_PARSERS=OFF", dockerfile)
+
     def test_retains_disabled_from_previous_site(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
